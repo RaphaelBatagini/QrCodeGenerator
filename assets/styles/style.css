@@ -1,0 +1,14 @@
+.btn-primary {
+    background-color: #A62241;
+    border-color: #A62241;
+    color: white !important;
+    font-weight: 700;
+}
+
+body {
+    background-color: #c1c1c1;
+}
+
+.step {
+    display: none;
+}

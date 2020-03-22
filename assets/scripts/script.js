@@ -29,7 +29,7 @@
 					return;
 				}
 				
-				$this.closest('form').submit();
+				$(this).closest('form').submit();
 			});
 		}
 

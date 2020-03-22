@@ -19,10 +19,12 @@
                 <h1>Complete seu cadastro</h1>
             </div>
             <div class="col-md-4 offset-md-4">
-                <form class="form form-steps" 
+                <form class="form form-steps" method="post" 
                     action="<?= admin_url('admin-post.php') ?>">
                     <input type="hidden" name="action" 
                         value="discount_partner_register_user">
+                    <input type="hidden" name="discount_partner" 
+                        value="<?= get_the_ID() ?>">
                     <div class="step" data-step="1">
                         <div class="form-group">    
                             <input type="email" class="form-control mb-3" 

@@ -1,15 +1,44 @@
-.btn-primary {
+.form-steps .btn-primary {
     background-color: #A62241;
     border-color: #A62241;
     color: white !important;
     font-weight: 700;
+    font-size: 30px;
+    font-style: italic;
+    border-radius: 15px;
+}
+
+.form-steps .btn-primary:hover {
+    background-color: #881d36;
+    border-color: #881d36;
+}
+
+.form-steps input, 
+.form-steps select {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid;
+    border-radius: 0;
+    margin-bottom: 5px !important;
+}
+
+.form-steps label {
+    margin-bottom: 45px;
+}
+
+.form-steps .form-group {
+    padding: 25px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin-bottom: 25px;
 }
 
 body {
-    background-color: #c1c1c1;
+    background-color: #f3f2ee !important;
 }
 
-.step {
+.step,
+.step.row {
     display: none;
 }
 
@@ -21,4 +50,55 @@ select.error {
 
 label.error {
     display: none !important;
+}
+
+.next {
+    cursor: pointer;
+}
+
+.card.card-coupon {
+    text-align: center;
+    border: none;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+.card.card-coupon .card-header {
+    background-color: white;
+    border-radius: 30px 30px 0 0;
+    border-bottom: 5px dashed #211817;
+    color: #A62241;
+    margin-bottom: 0;
+    box-shadow: 3px -1px 5px 0px rgba(0,0,0,0.46);
+}
+
+.card.card-coupon .card-header h2 {
+    font-size: 60px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.card.card-coupon .card-body {
+    font-size: 45px;
+    padding: 35px 1.25rem 55px;
+    border-radius: 0 0 15px 15px;
+    border-bottom: 5px dashed #211817;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.46);
+    background-color: white;
+}
+
+.card.card-coupon .card-body u {
+    font-size: 70px;
+    line-height: 60px;
+}
+
+.card.card-coupon .card-footer {
+    background-color: #A62241;
+    color: white;
+    border-radius: 20px;
+    border-top: 5px dashed #211817;
+    font-size: 22px;
+    padding: 1.3rem 1.25rem;
+    box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.46);
 }

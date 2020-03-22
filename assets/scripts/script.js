@@ -1,10 +1,9 @@
 (function($){
 	$(document).ready(function(){
 		function formNavigation() {
-			let form = $('form.form-steps');
 			var currentStep = 1;
 			let $nextButton = $('.next');
-			var maxStep = 2;
+			var maxStep = 3;
 
 			// first execution
 			$('.step[data-step="1"]').show();

@@ -19,11 +19,14 @@
                 <h1>Complete seu cadastro</h1>
             </div>
             <div class="col-md-4 offset-md-4">
-                <form class="form form-steps">
+                <form class="form form-steps" 
+                    action="<?= admin_url('admin-post.php') ?>">
+                    <input type="hidden" name="action" 
+                        value="discount_partner_register_user">
                     <div class="step" data-step="1">
                         <div class="form-group">    
                             <input type="email" class="form-control mb-3" 
-                                id="email" name="email">
+                                id="email" name="email" required>
                             <label for="email">E-mail</label>
                             <a class="btn btn-primary w-100 next">Continuar</a>
                         </div>
@@ -31,22 +34,26 @@
                     <div class="step" data-step="2">
                         <div class="form-group">    
                             <input type="text" class="form-control mb-3" 
-                                id="name" name="name">
+                                id="name" name="name" required>
                             <label for="email">Nome</label>
 
-                            <input type="text" class="form-control mb-3" 
-                                id="name" name="name">
+                            <select name="gender" class="form-control mb-3"
+                                id="gender" required>
+                                <option value=""></option>
+                                <option value="male">Masculino</option>
+                                <option value="female">Feminino</option>
+                            </select>
                             <label for="email">Sexo</label>
 
-                            <input type="text" class="form-control mb-3" 
-                                id="birthdate" name="birthdate">
+                            <input type="text" class="form-control mb-3 date" 
+                                id="birthdate" name="birthdate" required>
                             <label for="phone">Data de nascimento</label>
 
-                            <input type="text" class="form-control mb-3" 
-                                id="phone" name="phone">
+                            <input type="text" class="form-control mb-3 phone" 
+                                id="phone" name="phone" required>
                             <label for="phone">Telefone</label>
                             
-                            <a class="btn btn-primary w-100">Continuar</a>
+                            <a class="btn btn-primary w-100 finish">Continuar</a>
                         </div>
                     </div>
                 </form>

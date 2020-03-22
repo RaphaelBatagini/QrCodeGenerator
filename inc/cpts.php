@@ -1,5 +1,9 @@
 <?php
 
+if( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly
+}
+
 // Register Custom Post Type for Discount Partner
 function discount_partner_custom_post_type() {
 

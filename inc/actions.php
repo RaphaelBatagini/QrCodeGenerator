@@ -4,6 +4,8 @@ if( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }
 
+include dirname(__FILE__) . '/../vendor/phpqrcode/qrlib.php';
+
 add_action(
     'admin_post_discount_partner_register_user', 
     'discount_partner_register_user'
@@ -34,6 +36,26 @@ function discount_partner_register_user(){
     add_post_meta($post_id, 'gender', $_POST['gender']);
     add_post_meta($post_id, 'birthdate', $_POST['birthdate']);
     add_post_meta($post_id, 'phone', $_POST['phone']);
+
+    $qrCodeDir = wp_upload_dir()['basedir'] . '/discounts_partner_qrcode';
+    if (!is_dir( $qrCodeDir )) {
+        mkdir($qrCodeDir);
+    }
+
+    $qrCodeFileName = 'qrcode-' . $_POST['email'] . '-' . $_POST['discount_partner'] . '.png';
+
+    QRcode::png(
+        $_POST['email'] . '-' . $_POST['discount_partner'], 
+        $qrCodeDir . '/' . $qrCodeFileName
+    );
+
+    wp_mail(
+        $_POST['email'],
+        'Desconto no estabelecimento ' . get_the_title($_POST['discount_partner']),
+        'Apresente o QRCode abaixo no estabelecimento e tenha acesso a seu desconto<br>' . 
+        '<img src="'. wp_upload_dir()['baseurl'] . '/discounts_partner_qrcode\/' . $qrCodeFileName .'">',
+        "Content-type: text/html; charset=UTF-8'"
+    );
 
     wp_safe_redirect(get_permalink($_POST['discount_partner']) . '?success=1');
     exit;

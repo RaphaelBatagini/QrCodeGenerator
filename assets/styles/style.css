@@ -12,3 +12,13 @@ body {
 .step {
     display: none;
 }
+
+input.error,
+select.error {
+    border: 1px solid red;
+    background-color: #ffedf0;
+}
+
+label.error {
+    display: none !important;
+}

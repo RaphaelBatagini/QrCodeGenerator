@@ -45,11 +45,11 @@
                                 <option value="male">Masculino</option>
                                 <option value="female">Feminino</option>
                             </select>
-                            <label for="email">Sexo</label>
+                            <label for="gender">Sexo</label>
 
                             <input type="text" class="form-control mb-3 date" 
                                 id="birthdate" name="birthdate" required>
-                            <label for="phone">Data de nascimento</label>
+                            <label for="birthdate">Data de nascimento</label>
 
                             <input type="text" class="form-control mb-3 phone" 
                                 id="phone" name="phone" required>

@@ -26,7 +26,7 @@ function discount_partner_register_user(){
     );
 
     if (!$post_id) {
-        wp_safe_redirect(get_permalink($_POST['discount_partner']) . '?error=1');
+        wp_safe_redirect(get_permalink($_POST['discount_partner']) . '?failure=1');
         exit;
     }
 

@@ -1,11 +1,11 @@
-.form-steps .btn-primary {
-    background-color: #A62241;
-    border-color: #A62241;
+.btn-primary {
+    background-color: #A62241 !important;
+    border-color: #A62241 !important;
     color: white !important;
-    font-weight: 700;
-    font-size: 30px;
+    font-weight: 700 !important;
+    font-size: 30px !important;
     font-style: italic;
-    border-radius: 15px;
+    border-radius: 15px !important;
 }
 
 .form-steps .btn-primary:hover {
@@ -101,4 +101,11 @@ label.error {
     font-size: 22px;
     padding: 1.3rem 1.25rem;
     box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.46);
+}
+
+.thanks-message {
+    font-style: italic;
+    color: #A62241;
+    font-weight: 700 !important;
+    text-align: center;
 }

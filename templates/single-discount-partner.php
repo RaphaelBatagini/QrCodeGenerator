@@ -13,7 +13,15 @@
                 <img src="<?= plugin_dir_url(__FILE__) . '../assets/images/criarme.png' ?>" 
                     alt="<?php the_title() ?>" class="m-auto"/>
             </div>
-            <?php include 'parts/registration-form.php' ?>
+            <?php
+                if (!empty($_GET['success'])) {
+                    include 'parts/success-message.php';
+                } elseif (!empty($_GET['failure'])) {
+                    include 'parts/error-message.php';
+                } else {
+                    include 'parts/registration-form.php';
+                }
+            ?>
         </div>
     </div>
 

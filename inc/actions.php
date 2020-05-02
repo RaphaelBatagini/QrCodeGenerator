@@ -37,7 +37,14 @@ function discount_partner_register_user(){
     add_post_meta($post_id, 'birthdate', $_POST['birthdate']);
     add_post_meta($post_id, 'phone', $_POST['phone']);
     add_post_meta($post_id, 'discount', get_field('discount_percentage', $_POST['discount_partner']));
-    add_post_meta($post_id, 'shelf_life', get_field('shelf_life', $_POST['discount_partner']));
+    add_post_meta(
+        $post_id, 
+        'shelf_life', 
+        date_create_from_format(
+            'd/m/Y', 
+            get_field('shelf_life', $_POST['discount_partner'])
+        )->format('Y-m-d')
+    );
 
     $qrCodeDir = wp_upload_dir()['basedir'] . '/discounts_partner_qrcode';
     if (!is_dir( $qrCodeDir )) {

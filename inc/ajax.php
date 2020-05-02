@@ -20,10 +20,16 @@ function check_email()
                 'value' => $email,
             ),
             array(
+                'shelf_life',
+                'compare' => '>=',
+                'value' => date('Y-m-d') . ' 00:00:00',
+                'type' => 'DATE',
+            ),
+            array(
                 'relation' => 'OR',
                 array(
                     'key' => 'validated',
-                    'value' => false,
+                    'value' => 0,
                 ),
                 array(
                     'key' => 'validated',
@@ -31,7 +37,6 @@ function check_email()
                     'value' => '',
                 ),
             ),
-            // TODO: adicionar validacao de data
         ),
     );
     

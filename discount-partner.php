@@ -22,3 +22,4 @@ require __DIR__ . '/inc/filters.php';
 require __DIR__ . '/inc/actions.php';
 require __DIR__ . '/inc/enqueue.php';
 require __DIR__ . '/inc/api.php';
+require __DIR__ . '/inc/ajax.php';

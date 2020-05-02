@@ -47,7 +47,7 @@
                     id="email" name="email" required>
                 <label class="mb-3" for="email">E-mail</label>
             </div>
-            <a class="btn btn-primary w-100 next">Continuar</a>
+            <a class="btn btn-primary w-100 next step-one-btn">Continuar</a>
         </div>
     </div>
     <div class="step row" data-step="3">

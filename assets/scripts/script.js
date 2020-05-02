@@ -9,13 +9,21 @@
 			$('.step[data-step="1"]').show();
 
 			// action on next step click
-			$nextButton.click(function() {
+			$nextButton.click(async function() {
 				if (!validateForm($(this))) {
 					return;
 				}
 			
 				if (currentStep >= maxStep) {
 					return;
+				}
+				
+				if (currentStep == 2) {
+					var emailRegistered = await userAlreadyRegistered($('#email').val());
+					if (emailRegistered[0] && emailRegistered[0].ID) {
+						$('.modal').modal('show');
+						return;
+					}
 				}
 
 				currentStep++;
@@ -49,6 +57,19 @@
 			}
 
 			return true;
+		}
+
+		async function userAlreadyRegistered(email)
+		{
+			return jQuery.ajax({
+				url: '/wp-admin/admin-ajax.php',
+				type: 'POST',
+				data: {
+					'action': 'check_email',
+					'email': email,
+				},
+				dataType: 'JSON'
+			});
 		}
 		
 		formNavigation();

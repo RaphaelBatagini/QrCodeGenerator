@@ -16,7 +16,11 @@
             <h1 class="text-center">Aproveite nossas promoções</h1>    
         </div>
         <div class="col-12 col-lg-4 offset-lg-4">
-            <?php if(get_field('discount_percentage') && get_field('shelf_life')): ?>
+            <?php if(
+                get_field('discount_percentage') && 
+                get_field('shelf_life') && 
+                (new DateTime())->getTimestamp() <= date_create_from_format('d/m/Y', get_field('shelf_life'))->getTimestamp()
+            ): ?>
             <div class="card card-coupon mb-4 next">
                 <div class="card-header">
                     <h2 class="card-title"><?= get_field('discount_percentage') ?>% off</h2>

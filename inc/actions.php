@@ -39,7 +39,7 @@ function discount_partner_register_user(){
     add_post_meta($post_id, 'discount', get_field('discount_percentage', $_POST['discount_partner']));
     add_post_meta(
         $post_id, 
-        'shelf_life', 
+        'shelf_life',
         date_create_from_format(
             'd/m/Y', 
             get_field('shelf_life', $_POST['discount_partner'])

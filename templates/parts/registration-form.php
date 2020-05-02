@@ -16,17 +16,21 @@
             <h1 class="text-center">Aproveite nossas promoções</h1>    
         </div>
         <div class="col-12 col-lg-4 offset-lg-4">
+            <?php if(get_field('discount_percentage') && get_field('shelf_life')): ?>
             <div class="card card-coupon mb-4 next">
                 <div class="card-header">
-                    <h2 class="card-title">15% off</h2>
+                    <h2 class="card-title"><?= get_field('discount_percentage') ?>% off</h2>
                 </div>
                 <div class="card-body">
                     <p class="card-text">Clique aqui e gere seu <u>cupom</u></p>
                 </div>
                 <div class="card-footer">
-                    válido até 31/01/2020
+                    válido até <?= get_field('shelf_life') ?>
                 </div>
             </div>
+            <?php else: ?>
+                <h5>Nenhum desconto encontrado</h5>
+            <?php endif ?>
         </div>
     </div>
     <div class="step row" data-step="2">
